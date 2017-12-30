@@ -1,0 +1,23 @@
+{
+  "name": "generate-server-timing-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cvazac/generate-server-timing-tests.git"
+  },
+  "author": "Charles Vazac <cvazac@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cvazac/generate-server-timing-tests/issues"
+  },
+  "homepage": "https://github.com/cvazac/generate-server-timing-tests#readme",
+  "dependencies": {
+    "nodemon": "^1.14.6"
+  }
+}
