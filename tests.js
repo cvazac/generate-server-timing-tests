@@ -19,6 +19,9 @@ testServerTimingHeader("metric;desc=description;dur=123.4", [{"name":"metric","d
 // special chars in name
 testServerTimingHeader("aB3!#$%&'*+-.^_`|~", [{"name":"aB3!#$%&'*+-.^_`|~"}])
 
+// delimiter chars in quoted description
+testServerTimingHeader("metric;desc=\"descr;,=iption\";dur=123.4", [{"name":"metric","desc":"descr;,=iption","dur":"123.4"}])
+
 // spaces
 testServerTimingHeader("metric ; ", [{"name":"metric"}]);
 testServerTimingHeader("metric , ", [{"name":"metric"}]);
@@ -43,35 +46,65 @@ testServerTimingHeader("metric;desc=\"\t description \t\"", [{"name":"metric","d
 testServerTimingHeader("metric;desc=\"descr\\\"iption\"", [{"name":"metric","desc":"descr\"iption"}]);
 
 // quoted-strings - others
+// metric;desc=\ --> ''
 testServerTimingHeader("metric;desc=\\", [{"name":"metric","desc":""}]);
+// metric;desc=" --> ''
 testServerTimingHeader("metric;desc=\"", [{"name":"metric","desc":""}]);
+// metric;desc=\\ --> ''
 testServerTimingHeader("metric;desc=\\\\", [{"name":"metric","desc":""}]);
+// metric;desc=\" --> ''
 testServerTimingHeader("metric;desc=\\\"", [{"name":"metric","desc":""}]);
+// metric;desc="\ --> ''
 testServerTimingHeader("metric;desc=\"\\", [{"name":"metric","desc":""}]);
+// metric;desc="" --> ''
 testServerTimingHeader("metric;desc=\"\"", [{"name":"metric","desc":""}]);
+// metric;desc=\\\ --> ''
 testServerTimingHeader("metric;desc=\\\\\\", [{"name":"metric","desc":""}]);
+// metric;desc=\\" --> ''
 testServerTimingHeader("metric;desc=\\\\\"", [{"name":"metric","desc":""}]);
+// metric;desc=\"\ --> ''
 testServerTimingHeader("metric;desc=\\\"\\", [{"name":"metric","desc":""}]);
+// metric;desc=\"" --> ''
 testServerTimingHeader("metric;desc=\\\"\"", [{"name":"metric","desc":""}]);
+// metric;desc="\\ --> ''
 testServerTimingHeader("metric;desc=\"\\\\", [{"name":"metric","desc":""}]);
+// metric;desc="\" --> ''
 testServerTimingHeader("metric;desc=\"\\\"", [{"name":"metric","desc":""}]);
+// metric;desc=""\ --> ''
 testServerTimingHeader("metric;desc=\"\"\\", [{"name":"metric","desc":""}]);
+// metric;desc=""" --> ''
 testServerTimingHeader("metric;desc=\"\"\"", [{"name":"metric","desc":""}]);
+// metric;desc=\\\\ --> ''
 testServerTimingHeader("metric;desc=\\\\\\\\", [{"name":"metric","desc":""}]);
+// metric;desc=\\\" --> ''
 testServerTimingHeader("metric;desc=\\\\\\\"", [{"name":"metric","desc":""}]);
+// metric;desc=\\"\ --> ''
 testServerTimingHeader("metric;desc=\\\\\"\\", [{"name":"metric","desc":""}]);
+// metric;desc=\\"" --> ''
 testServerTimingHeader("metric;desc=\\\\\"\"", [{"name":"metric","desc":""}]);
+// metric;desc=\"\\ --> ''
 testServerTimingHeader("metric;desc=\\\"\\\\", [{"name":"metric","desc":""}]);
+// metric;desc=\"\" --> ''
 testServerTimingHeader("metric;desc=\\\"\\\"", [{"name":"metric","desc":""}]);
+// metric;desc=\""\ --> ''
 testServerTimingHeader("metric;desc=\\\"\"\\", [{"name":"metric","desc":""}]);
+// metric;desc=\""" --> ''
 testServerTimingHeader("metric;desc=\\\"\"\"", [{"name":"metric","desc":""}]);
+// metric;desc="\\\ --> ''
 testServerTimingHeader("metric;desc=\"\\\\\\", [{"name":"metric","desc":""}]);
+// metric;desc="\\" --> '\'
 testServerTimingHeader("metric;desc=\"\\\\\"", [{"name":"metric","desc":"\\"}]);
+// metric;desc="\"\ --> ''
 testServerTimingHeader("metric;desc=\"\\\"\\", [{"name":"metric","desc":""}]);
+// metric;desc="\"" --> '"'
 testServerTimingHeader("metric;desc=\"\\\"\"", [{"name":"metric","desc":"\""}]);
+// metric;desc=""\\ --> ''
 testServerTimingHeader("metric;desc=\"\"\\\\", [{"name":"metric","desc":""}]);
+// metric;desc=""\" --> ''
 testServerTimingHeader("metric;desc=\"\"\\\"", [{"name":"metric","desc":""}]);
+// metric;desc="""\ --> ''
 testServerTimingHeader("metric;desc=\"\"\"\\", [{"name":"metric","desc":""}]);
+// metric;desc="""" --> ''
 testServerTimingHeader("metric;desc=\"\"\"\"", [{"name":"metric","desc":""}]);
 
 // duplicate entry names
@@ -117,6 +150,8 @@ testServerTimingHeader("metric;foo dur=12", [{"name":"metric"}]);
 // nonsense - return zero entries
 testServerTimingHeader(" ", []);
 testServerTimingHeader("=", []);
+testServerTimingHeader("[", []);
+testServerTimingHeader("]", []);
 testServerTimingHeader(";", []);
 testServerTimingHeader(",", []);
 testServerTimingHeader("=;", []);
@@ -125,6 +160,7 @@ testServerTimingHeader("=,", []);
 testServerTimingHeader(",=", []);
 testServerTimingHeader(";,", []);
 testServerTimingHeader(",;", []);
+testServerTimingHeader("=;,", []);
 
 // TODO(cvazac) the following tests should actually NOT pass
 // According to the definition of token/tchar
