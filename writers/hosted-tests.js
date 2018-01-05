@@ -3,7 +3,7 @@ const fs = require('fs')
 module.exports = function(eventEmitter) {
   const output = {
     '_headers': '',
-    'index.html': '',
+    'index.html': '<div>Open devtools.</div>\n',
     'index.js': '',
   }
 
