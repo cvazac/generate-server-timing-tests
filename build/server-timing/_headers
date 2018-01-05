@@ -1,0 +1,261 @@
+/resources/0.js
+Server-Timing: 
+
+/resources/1.js
+Server-Timing: metric
+
+/resources/2.js
+Server-Timing: metric;dur=123.4
+
+/resources/3.js
+Server-Timing: metric;dur="123.4"
+
+/resources/4.js
+Server-Timing: metric;desc=description
+
+/resources/5.js
+Server-Timing: metric;desc="description"
+
+/resources/6.js
+Server-Timing: metric;dur=123.4;desc=description
+
+/resources/7.js
+Server-Timing: metric;desc=description;dur=123.4
+
+/resources/8.js
+Server-Timing: aB3!#$%&'*+-.^_`|~
+
+/resources/9.js
+Server-Timing: metric;desc="descr;,=iption";dur=123.4
+
+/resources/10.js
+Server-Timing: metric ; 
+
+/resources/11.js
+Server-Timing: metric , 
+
+/resources/12.js
+Server-Timing: metric ; dur = 123.4 ; desc = description
+
+/resources/13.js
+Server-Timing: metric ; desc = description ; dur = 123.4
+
+/resources/14.js
+Server-Timing: metric;desc = "description"
+
+/resources/15.js
+Server-Timing: metric1;dur=12.3;desc=description1,metric2;dur=45.6;desc=description2,metric3;dur=78.9;desc=description3
+
+/resources/16.js
+Server-Timing: metric1,metric2 ,metric3, metric4 , metric5
+
+/resources/17.js
+Server-Timing: metric;desc="description"
+
+/resources/18.js
+Server-Timing: metric;desc="	 description 	"
+
+/resources/19.js
+Server-Timing: metric;desc="descr\"iption"
+
+/resources/20.js
+Server-Timing: metric;desc=\
+
+/resources/21.js
+Server-Timing: metric;desc="
+
+/resources/22.js
+Server-Timing: metric;desc=\\
+
+/resources/23.js
+Server-Timing: metric;desc=\"
+
+/resources/24.js
+Server-Timing: metric;desc="\
+
+/resources/25.js
+Server-Timing: metric;desc=""
+
+/resources/26.js
+Server-Timing: metric;desc=\\\
+
+/resources/27.js
+Server-Timing: metric;desc=\\"
+
+/resources/28.js
+Server-Timing: metric;desc=\"\
+
+/resources/29.js
+Server-Timing: metric;desc=\""
+
+/resources/30.js
+Server-Timing: metric;desc="\\
+
+/resources/31.js
+Server-Timing: metric;desc="\"
+
+/resources/32.js
+Server-Timing: metric;desc=""\
+
+/resources/33.js
+Server-Timing: metric;desc="""
+
+/resources/34.js
+Server-Timing: metric;desc=\\\\
+
+/resources/35.js
+Server-Timing: metric;desc=\\\"
+
+/resources/36.js
+Server-Timing: metric;desc=\\"\
+
+/resources/37.js
+Server-Timing: metric;desc=\\""
+
+/resources/38.js
+Server-Timing: metric;desc=\"\\
+
+/resources/39.js
+Server-Timing: metric;desc=\"\"
+
+/resources/40.js
+Server-Timing: metric;desc=\""\
+
+/resources/41.js
+Server-Timing: metric;desc=\"""
+
+/resources/42.js
+Server-Timing: metric;desc="\\\
+
+/resources/43.js
+Server-Timing: metric;desc="\\"
+
+/resources/44.js
+Server-Timing: metric;desc="\"\
+
+/resources/45.js
+Server-Timing: metric;desc="\""
+
+/resources/46.js
+Server-Timing: metric;desc=""\\
+
+/resources/47.js
+Server-Timing: metric;desc=""\"
+
+/resources/48.js
+Server-Timing: metric;desc="""\
+
+/resources/49.js
+Server-Timing: metric;desc=""""
+
+/resources/50.js
+Server-Timing: metric;dur=12.3;desc=description1,metric;dur=45.6;desc=description2
+
+/resources/51.js
+Server-Timing: metric;DuR=123.4;DeSc=description
+
+/resources/52.js
+Server-Timing: metric;dur=foo
+
+/resources/53.js
+Server-Timing: metric;dur="foo"
+
+/resources/54.js
+Server-Timing: metric1;foo=bar;desc=description;foo=bar;dur=123.4;foo=bar,metric2
+
+/resources/55.js
+Server-Timing: metric;dur=123.4;dur=567.8
+
+/resources/56.js
+Server-Timing: metric;dur=foo;dur=567.8
+
+/resources/57.js
+Server-Timing: metric;desc=description1;desc=description2
+
+/resources/58.js
+Server-Timing: metric;dur;dur=123.4;desc=description
+
+/resources/59.js
+Server-Timing: metric;dur=;dur=123.4;desc=description
+
+/resources/60.js
+Server-Timing: metric;desc;desc=description;dur=123.4
+
+/resources/61.js
+Server-Timing: metric;desc=;desc=description;dur=123.4
+
+/resources/62.js
+Server-Timing: metric;desc=d1 d2;dur=123.4
+
+/resources/63.js
+Server-Timing: metric1;desc=d1 d2,metric2
+
+/resources/64.js
+Server-Timing: metric;desc="d1" d2;dur=123.4
+
+/resources/65.js
+Server-Timing: metric1;desc="d1" d2,metric2
+
+/resources/66.js
+Server-Timing: metric==   ""foo;dur=123.4
+
+/resources/67.js
+Server-Timing: metric1==   ""foo,metric2
+
+/resources/68.js
+Server-Timing: metric;dur foo=12
+
+/resources/69.js
+Server-Timing: metric;foo dur=12
+
+/resources/70.js
+Server-Timing:  
+
+/resources/71.js
+Server-Timing: =
+
+/resources/72.js
+Server-Timing: [
+
+/resources/73.js
+Server-Timing: ]
+
+/resources/74.js
+Server-Timing: ;
+
+/resources/75.js
+Server-Timing: ,
+
+/resources/76.js
+Server-Timing: =;
+
+/resources/77.js
+Server-Timing: ;=
+
+/resources/78.js
+Server-Timing: =,
+
+/resources/79.js
+Server-Timing: ,=
+
+/resources/80.js
+Server-Timing: ;,
+
+/resources/81.js
+Server-Timing: ,;
+
+/resources/82.js
+Server-Timing: =;,
+
+/resources/83.js
+Server-Timing: {
+
+/resources/84.js
+Server-Timing: }
+
+/resources/85.js
+Server-Timing: {}
+
+/resources/86.js
+Server-Timing: {"foo":"bar"},metric
+

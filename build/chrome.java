@@ -29,14 +29,12 @@
   testServerTimingHeader("metric ; desc = description ; dur = 123.4", {{"metric", "123.4", "description"}});
   testServerTimingHeader("metric;desc = \"description\"", {{"metric", "0", "description"}});
 
-  // tabs
-  /* known failures
-  testServerTimingHeader("metric\t;\t", {{"metric", "0", ""}});
-  testServerTimingHeader("metric\t,\t", {{"metric", "0", ""}});
-  testServerTimingHeader("metric\t;\tdur\t=\t123.4\t;\tdesc\t=\tdescription", {{"metric", "123.4", "description"}});
-  testServerTimingHeader("metric\t;\tdesc\t=\tdescription\t;\tdur\t=\t123.4", {{"metric", "123.4", "description"}});
-  testServerTimingHeader("metric;desc\t=\t\"description\"", {{"metric", "0", "description"}});
-  */
+  // tabs (known failures in chrome)
+  //testServerTimingHeader("metric\t;\t", [{"name":"metric"}]);
+  //testServerTimingHeader("metric\t,\t", [{"name":"metric"}]);
+  //testServerTimingHeader("metric\t;\tdur\t=\t123.4\t;\tdesc\t=\tdescription", [{"name":"metric","dur":123.4,"desc":"description"}]);
+  //testServerTimingHeader("metric\t;\tdesc\t=\tdescription\t;\tdur\t=\t123.4", [{"name":"metric","desc":"description","dur":123.4}]);
+  //testServerTimingHeader("metric;desc\t=\t\"description\"", [{"name":"metric","desc":"description"}]);
 
   // multiple entries
   testServerTimingHeader("metric1;dur=12.3;desc=description1,metric2;dur=45.6;desc=description2,metric3;dur=78.9;desc=description3", {{"metric1", "12.3", "description1"}, {"metric2", "45.6", "description2"}, {"metric3", "78.9", "description3"}});
