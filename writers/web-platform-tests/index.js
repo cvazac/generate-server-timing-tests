@@ -14,6 +14,7 @@ module.exports = function(eventEmitter) {
     fs.writeFileSync(`${fileName}.sub.headers`, `Server-Timing: ${header}\n`)
   })
   eventEmitter.on('done', function() {
+    console.info('count', count)
     writeFile(path, 'server_timing_header-parsing.html',
       mustache.render(fs.readFileSync(`${__dirname}/server_timing_header-parsing.template.html`).toString(), {testcount: count}))
   })

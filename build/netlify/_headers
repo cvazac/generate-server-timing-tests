@@ -155,95 +155,98 @@ Server-Timing: metric;dur=12.3;desc=description1,metric;dur=45.6;desc=descriptio
 Server-Timing: metric;DuR=123.4;DeSc=description
 
 /resources/52.js
-Server-Timing: metric;dur=foo
+Server-Timing: MeTrIc;desc=DeScRiPtIoN
 
 /resources/53.js
-Server-Timing: metric;dur="foo"
+Server-Timing: metric;dur=foo
 
 /resources/54.js
-Server-Timing: metric1;foo=bar;desc=description;foo=bar;dur=123.4;foo=bar,metric2
+Server-Timing: metric;dur="foo"
 
 /resources/55.js
-Server-Timing: metric;dur=123.4;dur=567.8
+Server-Timing: metric1;foo=bar;desc=description;foo=bar;dur=123.4;foo=bar,metric2
 
 /resources/56.js
-Server-Timing: metric;dur=foo;dur=567.8
+Server-Timing: metric;dur=123.4;dur=567.8
 
 /resources/57.js
-Server-Timing: metric;desc=description1;desc=description2
+Server-Timing: metric;dur=foo;dur=567.8
 
 /resources/58.js
-Server-Timing: metric;dur;dur=123.4;desc=description
+Server-Timing: metric;desc=description1;desc=description2
 
 /resources/59.js
-Server-Timing: metric;dur=;dur=123.4;desc=description
+Server-Timing: metric;dur;dur=123.4;desc=description
 
 /resources/60.js
-Server-Timing: metric;desc;desc=description;dur=123.4
+Server-Timing: metric;dur=;dur=123.4;desc=description
 
 /resources/61.js
-Server-Timing: metric;desc=;desc=description;dur=123.4
+Server-Timing: metric;desc;desc=description;dur=123.4
 
 /resources/62.js
-Server-Timing: metric;desc=d1 d2;dur=123.4
+Server-Timing: metric;desc=;desc=description;dur=123.4
 
 /resources/63.js
-Server-Timing: metric1;desc=d1 d2,metric2
+Server-Timing: metric;desc=d1 d2;dur=123.4
 
 /resources/64.js
-Server-Timing: metric;desc="d1" d2;dur=123.4
+Server-Timing: metric1;desc=d1 d2,metric2
 
 /resources/65.js
-Server-Timing: metric1;desc="d1" d2,metric2
+Server-Timing: metric;desc="d1" d2;dur=123.4
 
 /resources/66.js
-Server-Timing: metric==   ""foo;dur=123.4
+Server-Timing: metric1;desc="d1" d2,metric2
 
 /resources/67.js
-Server-Timing: metric1==   ""foo,metric2
+Server-Timing: metric==   ""foo;dur=123.4
 
 /resources/68.js
-Server-Timing: metric;dur foo=12
+Server-Timing: metric1==   ""foo,metric2
 
 /resources/69.js
-Server-Timing: metric;foo dur=12
+Server-Timing: metric;dur foo=12
 
 /resources/70.js
-Server-Timing:  
+Server-Timing: metric;foo dur=12
 
 /resources/71.js
-Server-Timing: =
+Server-Timing:  
 
 /resources/72.js
-Server-Timing: [
+Server-Timing: =
 
 /resources/73.js
-Server-Timing: ]
+Server-Timing: [
 
 /resources/74.js
-Server-Timing: ;
+Server-Timing: ]
 
 /resources/75.js
-Server-Timing: ,
+Server-Timing: ;
 
 /resources/76.js
-Server-Timing: =;
+Server-Timing: ,
 
 /resources/77.js
-Server-Timing: ;=
+Server-Timing: =;
 
 /resources/78.js
-Server-Timing: =,
+Server-Timing: ;=
 
 /resources/79.js
-Server-Timing: ,=
+Server-Timing: =,
 
 /resources/80.js
-Server-Timing: ;,
+Server-Timing: ,=
 
 /resources/81.js
-Server-Timing: ,;
+Server-Timing: ;,
 
 /resources/82.js
+Server-Timing: ,;
+
+/resources/83.js
 Server-Timing: =;,
 

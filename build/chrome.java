@@ -113,6 +113,9 @@
   // param name case sensitivity
   testServerTimingHeader("metric;DuR=123.4;DeSc=description", {{"metric", "123.4", "description"}});
 
+  // param value case sensitivity
+  testServerTimingHeader("MeTrIc;desc=DeScRiPtIoN", {{"MeTrIc", "0", "DeScRiPtIoN"}});
+
   // non-numeric durations
   testServerTimingHeader("metric;dur=foo", {{"metric", "0", ""}});
   testServerTimingHeader("metric;dur=\"foo\"", {{"metric", "0", ""}});
