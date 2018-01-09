@@ -247,15 +247,3 @@ Server-Timing: ,;
 /resources/82.js
 Server-Timing: =;,
 
-/resources/83.js
-Server-Timing: {
-
-/resources/84.js
-Server-Timing: }
-
-/resources/85.js
-Server-Timing: {}
-
-/resources/86.js
-Server-Timing: {"foo":"bar"},metric
-

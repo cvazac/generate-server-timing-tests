@@ -168,7 +168,7 @@
   // HeaderFieldTokenizer.IsTokenCharacter is being too permissive for the
   // following chars (decimal):
   // 123 '{', 125 '}', and 127 (not defined)
-  testServerTimingHeader("{", {{"{", "0", ""}});
-  testServerTimingHeader("}", {{"}", "0", ""}});
-  testServerTimingHeader("{}", {{"{}", "0", ""}});
-  testServerTimingHeader("{\"foo\":\"bar\"},metric", {{"{", "0", ""}});
+  //testServerTimingHeader("{", [{"name":"{"}]);
+  //testServerTimingHeader("}", [{"name":"}"}]);
+  //testServerTimingHeader("{}", [{"name":"{}"}]);
+  //testServerTimingHeader("{\"foo\":\"bar\"},metric", [{"name":"{"}]);
