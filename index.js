@@ -1,6 +1,7 @@
 const {EventEmitter} = require('events')
 const readline = require('readline')
 const fs = require('fs')
+const mustache = require('mustache')
 
 const lineReader = readline.createInterface({
   input: fs.createReadStream('tests.js')
@@ -13,7 +14,6 @@ fs.readdir('./writers', function(err, items) {
     require(`./writers/${writer}`)(eventEmitter)
   })
 })
-
 
 lineReader.on('line', function (line) {
   if (line.indexOf('testServerTimingHeader') !== 0) {
