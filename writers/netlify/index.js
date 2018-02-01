@@ -14,7 +14,7 @@ module.exports = function(eventEmitter) {
 
     fs.writeFileSync(`${path}/resources/${count}.js`,
       `testServerTiming(document.currentScript.src, ${JSON.stringify(expectedResults)})\n`)
-    output['_headers'] += `/resources/${count}.js\nServer-Timing: ${header}\n\n`
+    output['_headers'] += `/resources/${count}.js\nServer-Timing: ${header}\nCache-Control: no-store\n\n`
   })
   eventEmitter.on('done', function() {
     writeFile(path, 'index.html',
