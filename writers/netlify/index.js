@@ -13,7 +13,7 @@ module.exports = function(eventEmitter) {
     count++
 
     fs.writeFileSync(`${path}/resources/${count}.js`,
-      `testServerTiming(document.currentScript.src, ${JSON.stringify(expectedResults)})\n`)
+      `testServerTiming(document.currentScript, ${JSON.stringify(expectedResults)})\n`)
     output['_headers'] += `/resources/${count}.js\nServer-Timing: ${header}\nCache-Control: no-store\n\n`
   })
   eventEmitter.on('done', function() {

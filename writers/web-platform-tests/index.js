@@ -10,7 +10,7 @@ module.exports = function(eventEmitter) {
 
     const fileName = `${path}/resources/parsing/${count}.js`
     fs.writeFileSync(fileName,
-      `testServerTiming(document.currentScript.src, ${JSON.stringify(expectedResults)})\n`)
+      `testServerTiming(document.currentScript, ${JSON.stringify(expectedResults)})\n`)
     fs.writeFileSync(`${fileName}.sub.headers`, `Server-Timing: ${header}\n`)
   })
   eventEmitter.on('done', function() {
