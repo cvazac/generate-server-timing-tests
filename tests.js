@@ -165,6 +165,9 @@ testServerTimingHeader(";,", []);
 testServerTimingHeader(",;", []);
 testServerTimingHeader("=;,", []);
 
+// tabs
+testServerTimingHeader("metric;	desc=	tabs-should-get-trimmed	;dur=	42	", [{"name":"metric","desc":"tabs-should-get-trimmed","dur": 42.0}]);
+
 // TODO(cvazac) the following tests should actually NOT pass
 // According to the definition of token/tchar
 // (https://tools.ietf.org/html/rfc7230#appendix-B),

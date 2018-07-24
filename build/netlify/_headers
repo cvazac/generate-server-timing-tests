@@ -334,3 +334,7 @@ Cache-Control: no-store
 Server-Timing: =;,
 Cache-Control: no-store
 
+/resources/84.js
+Server-Timing: metric;	desc=	tabs-should-get-trimmed	;dur=	42	
+Cache-Control: no-store
+
